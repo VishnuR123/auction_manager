@@ -15,6 +15,18 @@ const App: React.FC = () => {
   const [remainingPurse, setRemainingPurse] = useState<number>(80); // 80 crores
   const [selectedImage, setSelectedImage] = useState('image1.jpg');
   
+  function handleOnDragEnd(result:any){
+    if(!result.destination) return;
+    const items=Array.from(players);
+    const [reorderedItem]=items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+    setPlayers(items);
+    console.log(result);
+    console.log('Updated Players:', items);
+  }
+
+
   const addPlayer = () => {
     if (newPlayer.name.trim() === '' || newPlayer.role.trim() === '' || newPlayer.price <= 0) {
       return;
@@ -51,16 +63,7 @@ const App: React.FC = () => {
     }
   };
   
-  function handleOnDragEnd(result:any){
-    if(!result.destination) return;
-    const items=Array.from(players);
-    const [reorderedItem]=items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
-
-    setPlayers(items);
-    console.log(result);
-    console.log('Updated Players:', items);
-  }
+  
 
   return (
     <div className='App'>
@@ -113,7 +116,7 @@ const App: React.FC = () => {
           <Droppable droppableId='playerContainer'>
             {(provided)=>(            
           <ul className='playerContainer' {...provided.droppableProps} ref={provided.innerRef}>
-            <li>dsnasjdk</li>
+
             {players.map((player,index) => (
               <Draggable key={player.id} draggableId={player.id.toString()} index={index}>
                 {(provided)=>(
