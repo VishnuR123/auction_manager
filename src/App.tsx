@@ -13,7 +13,7 @@ const App: React.FC = () => {
   const [players, setPlayers] = useState<Player[]>([]);
   const [newPlayer, setNewPlayer] = useState<Player>({ id: 0, name: '', role: '', price: 0 });
   const [remainingPurse, setRemainingPurse] = useState<number>(80); // 80 crores
-  const [selectedImage, setSelectedImage] = useState('image1.jpg');
+  const [selectedImage, setSelectedImage] = useState('IPL.png');
   
   function handleOnDragEnd(result:any){
     if(!result.destination) return;
@@ -99,7 +99,7 @@ const App: React.FC = () => {
           <button onClick={addPlayer}>Sold</button>
           <p className="remainingPurse">Remaining Purse: {remainingPurse} crores</p>
           <select id="imageSelector" onChange={(e) => setSelectedImage(e.target.value)}>
-                {/* <option value="src/assets/IPL.png">Team</option> */}
+                <option value="IPL.png">Team</option>
                 <option value="CSK.png">CSK</option>
                 <option value="DC.png">DC</option>
                 <option value="GT.png">GT</option>
