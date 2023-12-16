@@ -100,14 +100,14 @@ const App: React.FC = () => {
           <p className="remainingPurse">Remaining Purse: {remainingPurse} crores</p>
           <select id="imageSelector" onChange={(e) => setSelectedImage(e.target.value)}>
                 {/* <option value="src/assets/IPL.png">Team</option> */}
-                <option value="src/assets/CSK.png">CSK</option>
-                <option value="src/assets/DC.png">DC</option>
-                <option value="src/assets/GT.png">GT</option>
-                <option value="src/assets/KKR.png">KKR</option>
-                <option value="src/assets/MI.png">MI</option>
-                <option value="src/assets/RCB.png">RCB</option>
-                <option value="src/assets/RR.png">RR</option>
-                <option value="src/assets/SRH.png">SRH</option>
+                <option value="CSK.png">CSK</option>
+                <option value="DC.png">DC</option>
+                <option value="GT.png">GT</option>
+                <option value="KKR.png">KKR</option>
+                <option value="MI.png">MI</option>
+                <option value="RCB.png">RCB</option>
+                <option value="RR.png">RR</option>
+                <option value="SRH.png">SRH</option>
           </select>
       </div>
       
