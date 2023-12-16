@@ -57,7 +57,7 @@ const App: React.FC = () => {
       const totalSpent = updatedPlayers.reduce((total, player) => total + player.price, 0);
       
       // Calculate the remaining purse by subtracting the total spent from the initial purse (80)
-      const newRemainingPurse = 80 - totalSpent;
+      const newRemainingPurse = 90 - totalSpent;
   
       setRemainingPurse(newRemainingPurse);
     }
