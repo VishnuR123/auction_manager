@@ -12,7 +12,7 @@ interface Player {
 const App: React.FC = () => {
   const [players, setPlayers] = useState<Player[]>([]);
   const [newPlayer, setNewPlayer] = useState<Player>({ id: 0, name: '', role: '', price: 0 });
-  const [remainingPurse, setRemainingPurse] = useState<number>(80); // 80 crores
+  const [remainingPurse, setRemainingPurse] = useState<number>(90); // 80 crores
   const [selectedImage, setSelectedImage] = useState('IPL.png');
   
   function handleOnDragEnd(result:any){
@@ -34,7 +34,7 @@ const App: React.FC = () => {
 
     const updatedPlayers = [...players, { ...newPlayer, id: Date.now() }];
     const totalSpent = updatedPlayers.reduce((total, player) => total + player.price, 0);
-    const newRemainingPurse = 80 - totalSpent;
+    const newRemainingPurse = 90 - totalSpent;
     console.log('Total Spent:', totalSpent);
     console.log('New Remaining Purse:', newRemainingPurse);
     if (newRemainingPurse >= 0) {
